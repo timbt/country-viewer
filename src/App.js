@@ -2,32 +2,9 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useRouteMatch,
-  useParams
+  Route
 } from 'react-router-dom';
-
-function CountryDetail() {
-
-  const { countryId } = useParams();
-
-  return(
-  <p>You requested: {countryId}</p>
-  );
-}
-
-function Country() {
-
-  const match = useRouteMatch();
-
-  return (
-    <Switch>
-      <Route path={`${match.path}/:countryId`}>
-        <CountryDetail /> 
-      </Route>
-    </Switch>
-  );
-}
+import Country from './Country';
 
 function App() {
   return (
