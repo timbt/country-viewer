@@ -18,7 +18,7 @@ function findCountry(countries, cca3) {
 
     // Country not found in dataset
     throw new Error(
-        `Country with CCA3 code ${cca3} not found in provided dataset.`
+        `Country with CCA3 code ${cca3} not found in dataset.`
     );
 }
 
@@ -28,11 +28,12 @@ function CountryDetail() {
     const { countryId } = useParams();
 
     let country = {};
-    
+    // Return the requested country or render an error message if it can't
+    // be found.
     try {
         country = findCountry(worldCountries, countryId);
     }  catch(e) {
-        return <p>Could not find country {countryId}!</p>
+        return <p>Error: {e.message}</p>
     }
   
     return(
