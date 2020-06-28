@@ -8,7 +8,7 @@ import Country from './Country';
 
 function App() {
   return (
-    <Router>
+    <Router basename="process.env.PUBLIC_URL">
       <Switch>
 
         {/*Path for when a country has been specified*/}
@@ -20,7 +20,7 @@ function App() {
         <Route path='/'>
           <p>Hello world!</p>
         </Route>
-        
+
       </Switch>
     </Router>
   );
