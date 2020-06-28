@@ -12,9 +12,12 @@ function Country() {
   
     return (
       <Switch>
+
+        {/*Attempt to render a country if a URL parameter was provided*/}
         <Route path={`${match.path}/:countryId`}>
           <CountryDetail /> 
         </Route>
+        
       </Switch>
     );
   }

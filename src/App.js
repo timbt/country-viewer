@@ -10,12 +10,17 @@ function App() {
   return (
     <Router>
       <Switch>
+
+        {/*Path for when a country has been specified*/}
         <Route path ='/countries'>
           <Country />
         </Route>
+
+        {/*Default path - show user search options*/}
         <Route path='/'>
           <p>Hello world!</p>
         </Route>
+        
       </Switch>
     </Router>
   );
