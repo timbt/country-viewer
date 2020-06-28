@@ -12,8 +12,8 @@ function App() {
       <Switch>
 
         {/*Path for when a country has been specified*/}
-        <Route path ='/countries'>
-          <Country />
+        <Route path ='/countries/:countryId'>
+          <Country/>
         </Route>
 
         {/*Default path - show user search options*/}
