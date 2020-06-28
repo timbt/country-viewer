@@ -8,21 +8,29 @@ import Country from './Country';
 
 function App() {
   return (
-    <Router basename="process.env.PUBLIC_URL">
-      <Switch>
+    <React.Fragment>
 
-        {/*Path for when a country has been specified*/}
-        <Route path ='/countries/:countryId'>
-          <Country/>
-        </Route>
+      {/* Application-wide header */}
+      <h1>Country Factbook</h1>
+      
+      <Router basename="process.env.PUBLIC_URL">
+        <Switch>
 
-        {/*Default path - show user search options*/}
-        <Route path='/'>
-          <p>Hello world!</p>
-        </Route>
+          {/* Path for when a country has been specified */}
+          <Route path ='/countries/:countryId'>
+            <Country />
+          </Route>
 
-      </Switch>
-    </Router>
+          {/* Default path - show user search options */}
+          <Route path='/'>
+            <p>Hello world!</p>
+          </Route>
+
+        </Switch>
+      </Router>
+
+    </React.Fragment>
+    
   );
 }
 
