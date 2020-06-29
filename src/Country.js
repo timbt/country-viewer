@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { countryCodeExists, fetchCountryByCode } from './dataset';
+import CountryTable from './CountryTable';
 
 function Country() {
 
@@ -14,7 +15,7 @@ function Country() {
 
     // Return a country
     const countryData = fetchCountryByCode(countryId);
-    return <p>You requested {countryData.name.common}.</p>
+    return <CountryTable data={countryData} />;
 
   }
 
