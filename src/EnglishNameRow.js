@@ -3,7 +3,6 @@ import React from 'react';
 function EnglishNameRow({ name }) {
 
     // Return a table row with the provided country name
-
     const row =  (
         <tr>
             <td>Official Name (In English)</td>
