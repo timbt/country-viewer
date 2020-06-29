@@ -20,7 +20,7 @@ function App() {
       {/* Application-wide header */}
       <h1>Country Factbook</h1>
       
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename="/">
         <Switch>
 
           {/* Path for when a country has been specified */}
