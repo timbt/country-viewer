@@ -5,10 +5,17 @@ import {
   Route
 } from 'react-router-dom';
 import Country from './Country';
+import worldCountries from 'world-countries';
+
+// Create a React context to contain the world countries dataset
+const CountriesContext = React.createContext(worldCountries);
 
 function App() {
+
   return (
-    <React.Fragment>
+    
+    // Provide countries context to all components
+    <CountriesContext.Provider value={worldCountries}>
 
       {/* Application-wide header */}
       <h1>Country Factbook</h1>
@@ -29,7 +36,7 @@ function App() {
         </Switch>
       </Router>
 
-    </React.Fragment>
+    </CountriesContext.Provider>
     
   );
 }
