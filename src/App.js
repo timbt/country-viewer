@@ -6,9 +6,7 @@ import {
 } from 'react-router-dom';
 import Country from './Country';
 import worldCountries from 'world-countries';
-
-// Create a React context to contain the world countries dataset
-const CountriesContext = React.createContext(worldCountries);
+import CountriesContext from './CountriesContext';
 
 function App() {
 
