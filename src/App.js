@@ -13,14 +13,14 @@ const CountriesContext = React.createContext(worldCountries);
 function App() {
 
   return (
-    
+
     // Provide countries context to all components
     <CountriesContext.Provider value={worldCountries}>
 
       {/* Application-wide header */}
       <h1>Country Factbook</h1>
       
-      <Router basename="process.env.PUBLIC_URL">
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
 
           {/* Path for when a country has been specified */}
