@@ -8,6 +8,12 @@ function Search() {
     // Obtain the countries dataset to create a searchable list of countries.
     const countries = useContext(CountriesContext);
 
+    const countriesList = countries.map(country => (
+        <option key={country.cca3} value={country.cca3}>
+            {country.name.common}
+        </option>
+    ));
+
     // react-redux history used to allow form to redirect to the URL of the
     // selected country
     const history = useHistory();
@@ -32,13 +38,11 @@ function Search() {
             </label>
             
             <datalist id="countries-list">
-                <option value="CAN">Canada</option>
-                <option value="USA">United States</option>
-                <option value="MEX">Mexico</option>
+                {countriesList}
             </datalist>
 
             <input type="submit" value="Submit" />
-            
+
         </form>
     );
 }
