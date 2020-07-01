@@ -7,6 +7,7 @@ import {
 import Country from './Country';
 import worldCountries from 'world-countries';
 import CountriesContext from './CountriesContext';
+import Search from './Search';
 
 function App() {
 
@@ -19,6 +20,10 @@ function App() {
       <h1>Country Factbook</h1>
       
       <Router basename="/">
+
+        {/* Search bar for looking up a country */}
+        <Search />
+        
         <Switch>
 
           {/* Path for when a country has been specified */}
