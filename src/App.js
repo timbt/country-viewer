@@ -26,11 +26,6 @@ function App() {
             <Country />
           </Route>
 
-          {/* Default path - show user search options */}
-          <Route path='/'>
-            <p>Hello world!</p>
-          </Route>
-
         </Switch>
       </Router>
 
