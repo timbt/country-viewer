@@ -33,10 +33,13 @@ function Search() {
     return (
         <form onSubmit={handleSubmit}>
 
-            <label>Country Code:
-                <input type="search" list="countries-list" onChange={handleChange} />
-            </label>
-            
+            <input 
+                type="search"
+                list="countries-list"
+                placeholder="Enter a country name..."
+                onChange={handleChange} 
+            />
+                        
             <datalist id="countries-list">
                 {countriesList}
             </datalist>
