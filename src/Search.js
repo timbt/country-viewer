@@ -9,11 +9,16 @@ function Search() {
 
     // Transform list of countries from the dataset into a list of <option>
     // tags
-    const countriesList = countries.map(country => (
-        <option key={country.cca3} value={country.cca3}>
-            {country.name.common}
-        </option>
-    ));
+    const countriesList = countries
+        // Sort countries alphabetically by common name
+        .sort((a, b) => (a.name.common > b.name.common ? 1 : -1))
+        // Map each country to an <option> element
+        .map(
+            country => (
+            <option key={country.cca3} value={country.cca3}>
+                {country.name.common}
+            </option>
+        ));
 
     // react-redux history used to allow form to redirect to the URL of the
     // selected country
@@ -34,17 +39,10 @@ function Search() {
 
     return (
         <form onSubmit={handleSubmit}>
-
-            <input 
-                type="search"
-                list="countries-list"
-                placeholder="Enter a country name..."
-                onChange={handleChange} 
-            />
                         
-            <datalist id="countries-list">
+            <select id="countries-list" placeholder="Enter a country name..." onChange={handleChange}>
                 {countriesList}
-            </datalist>
+            </select>
 
             <input type="submit" value="Submit" />
 
