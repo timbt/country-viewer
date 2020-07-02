@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import CountriesContext from './CountriesContext';
 
@@ -24,29 +24,20 @@ function Search() {
     // selected country
     const history = useHistory();
 
-    // User's entered search value managed through state hook.
-    const [searchValue, setSearchValue] = useState(); 
-
-    // Update the search value in response to user input
+    // Redirect to the selected country on user input
     const handleChange = event => {
-        setSearchValue(event.target.value);
+        history.push(`/countries/${event.target.value}`);
     };
 
-    // Redirect to the selected country's URL when the user presses submit
-    const handleSubmit = event => {
-        history.push(`/countries/${searchValue}`);
-    };
-
-    return (
-        <form onSubmit={handleSubmit}>
-                        
-            <select id="countries-list" placeholder="Enter a country name..." onChange={handleChange}>
-                {countriesList}
-            </select>
-
-            <input type="submit" value="Submit" />
-
-        </form>
+    return (                    
+        <select 
+            id="countries-list"
+            placeholder="Enter a country name..."
+            onChange={handleChange}
+        >
+            <option value="" disabled selected>Choose a country...</option>
+            {countriesList}
+        </select>
     );
 }
 
